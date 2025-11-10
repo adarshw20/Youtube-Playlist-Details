@@ -87,4 +87,4 @@ Contributions are welcome! If you'd like to contribute:
 
 ---
 
-Built with ❤️ by [Your Name]
+Built with ❤️ by adarshw20
