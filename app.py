@@ -25,9 +25,15 @@ def format_number(num):
     return str(num)
 
 # Initialize YouTube API
-playlist_id = "PLhR2IpV1b2FwWwviBHRrR118YAaSlyhTU"
 try:
     youtube = build('youtube', 'v3', developerKey=api_key)
+    
+    # Get playlist ID from user input
+    playlist_id = input("Enter YouTube Playlist ID: ").strip()
+    if not playlist_id:
+        print("Error: Playlist ID cannot be empty")
+        exit(1)
+        
 except Exception as e:
     print(f"Error initializing YouTube API: {e}")
     exit(1)
