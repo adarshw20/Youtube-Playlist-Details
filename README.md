@@ -1,73 +1,90 @@
-# YouTube Playlist Analyzer
+# Youtube Playlist Details
 
-A Python script that fetches and analyzes YouTube playlist data including video statistics, duration, and other metadata.
+A powerful Python script to analyze and extract detailed statistics from any public YouTube playlist. Get comprehensive insights about video durations, view counts, likes, and more with just a few commands.
 
-## Features
+## ✨ Features
 
-- Fetches detailed information about a YouTube playlist
-- Calculates total duration of all videos
-- Shows view, like, and comment statistics
-- Identifies most viewed and most liked videos
-- Exports all data to a text file
+- 📊 **Playlist Statistics**: Total duration, average video length, and more
+- 🎯 **Video Analysis**: View counts, like ratios, and engagement metrics
+- 🏆 **Top Performers**: Identify most viewed and most liked videos
+- 📝 **Detailed Reports**: Export all data to a well-formatted text file
+- 🔄 **Pagination Support**: Handles playlists of any size
 
-## Prerequisites
+## 🚀 Quick Start
 
+### Prerequisites
 - Python 3.8 or higher
-- YouTube Data API v3 key
-- Required Python packages (install using `pip install -r requirements.txt`)
+- YouTube Data API v3 key ([Get one here](https://console.cloud.google.com/))
 
-## Setup
+### Installation
 
-1. Clone this repository:
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/YouTubePlayTime.git
-   cd YouTubePlayTime
+   git clone https://github.com/yourusername/Youtube-Playlist-Details.git
+   cd Youtube-Playlist-Details
    ```
 
-2. Install the required packages:
+2. **Set up a virtual environment** (recommended)
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate  # On Windows
+   source .venv/bin/activate  # On macOS/Linux
+   ```
+
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file in the project root and add your YouTube API key:
-   ```
-   YOUTUBE_API_KEY=your_api_key_here
-   ```
+4. **Configure your API key**
+   - Create a `.env` file in the project root
+   - Add your YouTube API key:
+     ```
+     YOUTUBE_API_KEY=your_api_key_here
+     ```
 
-## How to Get a YouTube API Key
+## 🛠️ Usage
 
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the YouTube Data API v3
-4. Create credentials (API key)
-5. Copy the API key and add it to your `.env` file
+1. **Edit the script** (optional)
+   - Open `app.py` and modify the `playlist_id` variable to analyze a different playlist
 
-## Usage
-
-1. Update the `playlist_id` in `app.py` with your desired YouTube playlist ID
-2. Run the script:
+2. **Run the analyzer**
    ```bash
    python app.py
    ```
-3. The script will create a `playlist_details.txt` file with all the information
 
-## Output
+3. **View the results**
+   - Check `playlist_details.txt` for the complete analysis
 
-The script generates a text file (`playlist_details.txt`) containing:
-- Playlist information (title, channel, publish date)
-- Statistics (total duration, average video length, etc.)
-- Top performing videos
-- Complete list of all videos with their details
+## 📊 Example Output
 
-## Security Note
+The script generates a detailed report including:
+- Playlist metadata (title, channel, video count)
+- Aggregate statistics (total views, likes, comments)
+- Performance metrics (average duration, engagement rates)
+- Complete video list with individual stats
 
-Never commit your API key to version control. The `.env` file is included in `.gitignore` to prevent accidental commits of sensitive information.
+## 🔒 Security
 
-## License
+- Your API key is stored in `.env` which is ignored by Git
+- Never commit sensitive information to version control
+- Consider restricting your API key usage in the Google Cloud Console
 
-This project is open source and available under the [MIT License](LICENSE).
+## 🤝 Contributing
 
-## Contributing
+Contributions are welcome! If you'd like to contribute:
+1. Fork the repository
+2. Create a new branch for your feature
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-# Youtube-Playlist-Details
+## 📝 Notes
+
+- The script handles YouTube API rate limits automatically
+- For large playlists, processing may take some time
+- Ensure your API key has sufficient quota for the YouTube Data API v3
+
+---
+
+Built with ❤️ by [Your Name]
