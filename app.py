@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
 import isodate
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Load environment variables from .env file
 load_dotenv()
@@ -38,12 +38,18 @@ except Exception as e:
     print(f"Error initializing YouTube API: {e}")
     exit(1)
 
-# Get playlist details
-playlist_request = youtube.playlists().list(
-    part='snippet,contentDetails',
-    id=playlist_id
-)
-playlist_response = playlist_request.execute()
+try:
+    # Get playlist details
+    playlist_request = youtube.playlists().list(
+        part='snippet,contentDetails',
+        id=playlist_id
+    )
+    playlist_response = playlist_request.execute()
+except Exception as e:
+    print(f"An error occurred while fetching playlist details: {e}")
+    print("This might be due to an invalid Playlist ID, an incorrect API key, or a network issue.")
+    print("Please check your .env file and the provided Playlist ID.")
+    exit(1)
 
 if not playlist_response['items']:
     print("Playlist not found!")
